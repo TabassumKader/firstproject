@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: linear-gradient(to bottom right, #4CAF50, #2196F3);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.first_project.LoginController">
+   <children>
+      <Label text="Titas Gas Management System" style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;" />
+      <VBox alignment="CENTER" spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 30;" maxWidth="400" minWidth="400">
+         <children>
+            <Label text="Login" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+            <TextField fx:id="usernameField" promptText="Username" maxWidth="300" />
+            <PasswordField fx:id="passwordField" promptText="Password" maxWidth="300" />
+            <ComboBox fx:id="userTypeComboBox" promptText="Select User Type" maxWidth="300">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="Managing Director" />
+                     <String fx:value="Domestic Customer" />
+                  </FXCollections>
+               </items>
+            </ComboBox>
+            <Button fx:id="loginButton" text="Login" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;" maxWidth="300" onAction="#handleLogin" />
+            <Label fx:id="errorLabel" text="" style="-fx-text-fill: red;" />
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>
