@@ -9,7 +9,7 @@ import javafx.collections.ObservableList;
 public class DirectorGoal1Controller {
     
     @FXML
-    private Label connectionsLabel;
+    private Label activeConnectionsLabel;
     
     @FXML
     private Label complaintsLabel;
@@ -52,7 +52,7 @@ public class DirectorGoal1Controller {
     
     @FXML
     private void goBack() {
-        Stage stage = (Stage) connectionsLabel.getScene().getWindow();
+        Stage stage = (Stage) activeConnectionsLabel.getScene().getWindow();
         stage.close();
     }
     

@@ -32,13 +32,13 @@ public class CustomerGoal1Controller {
     private ComboBox<String> propertyTypeComboBox;
     
     @FXML
-    private Label nidFileLabel;
+    private TextField nidFileField;
     
     @FXML
-    private Label utilityFileLabel;
+    private TextField utilityFileField;
     
     @FXML
-    private Label photoFileLabel;
+    private TextField photoFileField;
     
     @FXML
     public void initialize() {
@@ -64,7 +64,7 @@ public class CustomerGoal1Controller {
     private void browseNID() {
         File file = showFileChooser("Select NID Copy", "*.pdf", "*.jpg", "*.png");
         if (file != null) {
-            nidFileLabel.setText(file.getName());
+            nidFileField.setText(file.getName());
         }
     }
     
@@ -72,7 +72,7 @@ public class CustomerGoal1Controller {
     private void browseUtilityBill() {
         File file = showFileChooser("Select Utility Bill", "*.pdf", "*.jpg", "*.png");
         if (file != null) {
-            utilityFileLabel.setText(file.getName());
+            utilityFileField.setText(file.getName());
         }
     }
     
@@ -80,7 +80,7 @@ public class CustomerGoal1Controller {
     private void browsePhoto() {
         File file = showFileChooser("Select Photo", "*.jpg", "*.png", "*.jpeg");
         if (file != null) {
-            photoFileLabel.setText(file.getName());
+            photoFileField.setText(file.getName());
         }
     }
     
@@ -93,9 +93,9 @@ public class CustomerGoal1Controller {
         addressArea.clear();
         connectionTypeComboBox.setValue(null);
         propertyTypeComboBox.setValue(null);
-        nidFileLabel.setText("No file selected");
-        utilityFileLabel.setText("No file selected");
-        photoFileLabel.setText("No file selected");
+        nidFileField.clear();
+        utilityFileField.clear();
+        photoFileField.clear();
     }
     
     @FXML
@@ -155,17 +155,17 @@ public class CustomerGoal1Controller {
             return false;
         }
         
-        if (nidFileLabel.getText().equals("No file selected")) {
+        if (nidFileField.getText().trim().isEmpty()) {
             showAlert("Validation Error", "Please upload your NID copy.");
             return false;
         }
         
-        if (utilityFileLabel.getText().equals("No file selected")) {
+        if (utilityFileField.getText().trim().isEmpty()) {
             showAlert("Validation Error", "Please upload your utility bill.");
             return false;
         }
         
-        if (photoFileLabel.getText().equals("No file selected")) {
+        if (photoFileField.getText().trim().isEmpty()) {
             showAlert("Validation Error", "Please upload your photo.");
             return false;
         }
