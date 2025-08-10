@@ -2,13 +2,17 @@ package org.example.first_project;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import javafx.collections.FXCollections;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class LoginController {
+public class LoginController implements Initializable {
     @FXML
     private TextField usernameField;
     
@@ -20,6 +24,15 @@ public class LoginController {
     
     @FXML
     private Label errorLabel;
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // Populate the ComboBox with user types
+        userTypeComboBox.setItems(FXCollections.observableArrayList(
+            "Managing Director",
+            "Domestic Customer"
+        ));
+    }
     
     @FXML
     private void handleLogin() {

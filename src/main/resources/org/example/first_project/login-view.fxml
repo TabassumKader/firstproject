@@ -4,6 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
+<?import javafx.collections.FXCollections?>
 
 <VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: linear-gradient(to bottom right, #4CAF50, #2196F3);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.first_project.LoginController">
    <children>
@@ -13,14 +14,7 @@
             <Label text="Login" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
             <TextField fx:id="usernameField" promptText="Username" maxWidth="300" />
             <PasswordField fx:id="passwordField" promptText="Password" maxWidth="300" />
-            <ComboBox fx:id="userTypeComboBox" promptText="Select User Type" maxWidth="300">
-               <items>
-                  <FXCollections fx:factory="observableArrayList">
-                     <String fx:value="Managing Director" />
-                     <String fx:value="Domestic Customer" />
-                  </FXCollections>
-               </items>
-            </ComboBox>
+            <ComboBox fx:id="userTypeComboBox" promptText="Select User Type" maxWidth="300" />
             <Button fx:id="loginButton" text="Login" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;" maxWidth="300" onAction="#handleLogin" />
             <Label fx:id="errorLabel" text="" style="-fx-text-fill: red;" />
          </children>
