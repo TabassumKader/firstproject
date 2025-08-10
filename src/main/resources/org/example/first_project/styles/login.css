@@ -1,0 +1,119 @@
+/* Root Styles */
+.root {
+    -fx-background-color: #f5f5f5;
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Login Container */
+.login-container {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 2);
+    -fx-background-radius: 8px;
+    -fx-padding: 30px;
+    -fx-max-width: 450px;
+}
+
+/* Title Styles */
+.title-text {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-fill: #2c3e50;
+}
+
+.subtitle-text {
+    -fx-font-size: 14px;
+    -fx-fill: #7f8c8d;
+}
+
+/* Form Styles */
+.login-form {
+    -fx-background-color: transparent;
+    -fx-padding: 20px;
+}
+
+.field-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #34495e;
+    -fx-font-weight: bold;
+}
+
+.text-field, .password-field {
+    -fx-background-color: #f8f9fa;
+    -fx-background-radius: 4px;
+    -fx-border-color: #e9ecef;
+    -fx-border-radius: 4px;
+    -fx-padding: 8px;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-background-color: white;
+    -fx-border-color: #4CAF50;
+    -fx-effect: dropshadow(gaussian, rgba(76, 175, 80, 0.2), 4, 0, 0, 0);
+}
+
+/* Button Styles */
+.login-button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+    -fx-min-width: 100%;
+}
+
+.login-button:hover {
+    -fx-background-color: #388E3C;
+}
+
+.login-button:pressed {
+    -fx-background-color: #2E7D32;
+}
+
+/* Hyperlink Styles */
+.hyperlink {
+    -fx-text-fill: #4CAF50;
+    -fx-font-size: 13px;
+    -fx-border-color: transparent;
+    -fx-padding: 4px;
+}
+
+.hyperlink:hover {
+    -fx-text-fill: #388E3C;
+    -fx-underline: true;
+}
+
+/* Footer Styles */
+.footer-text {
+    -fx-font-size: 12px;
+    -fx-fill: #95a5a6;
+}
+
+/* Loading Indicator */
+.progress-indicator {
+    -fx-progress-color: #4CAF50;
+}
+
+/* Error Styles */
+.error-label {
+    -fx-text-fill: #e74c3c;
+    -fx-font-size: 12px;
+    -fx-padding: 5px 0 0 0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .login-container {
+        -fx-padding: 15px;
+    }
+
+    .title-text {
+        -fx-font-size: 20px;
+    }
+
+    .login-form {
+        -fx-padding: 10px;
+    }
+}

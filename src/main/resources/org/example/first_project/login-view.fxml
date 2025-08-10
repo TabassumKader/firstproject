@@ -1,27 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.first_project.LoginController">
-   <children>
-      <Label text="Titas Gas Management System" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
-      <VBox alignment="CENTER" spacing="15.0" maxWidth="400" minWidth="400">
-         <children>
-            <Label text="Login" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
-            <TextField fx:id="usernameField" promptText="Username" maxWidth="300" />
-            <PasswordField fx:id="passwordField" promptText="Password" maxWidth="300" />
-            <ComboBox fx:id="userTypeComboBox" promptText="Select User Type" maxWidth="300" />
-            <Button fx:id="loginButton" text="Login" maxWidth="300" onAction="#handleLogin" />
-            <Label fx:id="errorLabel" text="" style="-fx-text-fill: red;" />
-         </children>
-         <padding>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-         </padding>
-      </VBox>
-   </children>
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
+<VBox alignment="CENTER" spacing="20.0"
+      xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.first_project.controllers.LoginController">
+    
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <!-- Title -->
+    <Text text="Titas Gas Management System" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+    <Text text="Please login to continue" style="-fx-font-size: 14px;"/>
+
+    <!-- Login Form -->
+    <VBox spacing="15" maxWidth="350">
+        <!-- Username Field -->
+        <Label text="Username"/>
+        <TextField fx:id="usernameField" promptText="Enter your username"/>
+
+        <!-- Password Field -->
+        <Label text="Password"/>
+        <PasswordField fx:id="passwordField" promptText="Enter your password"/>
+
+        <!-- Login Button -->
+        <Button fx:id="loginButton" text="Login" onAction="#handleLogin" 
+                defaultButton="true" maxWidth="Infinity"/>
+
+        <!-- Forgot Password Link -->
+        <Hyperlink text="Forgot Password?" onAction="#handleForgotPassword"
+                   alignment="CENTER"/>
+    </VBox>
+
+    <!-- Footer -->
+    <Text text="© 2025 Titas Gas Transmission and Distribution Company Limited"/>
+
+    <!-- Loading Indicator (initially hidden) -->
+    <ProgressIndicator fx:id="loadingIndicator" visible="false"/>
+
 </VBox>

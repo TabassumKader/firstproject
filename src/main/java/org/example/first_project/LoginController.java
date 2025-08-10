@@ -27,11 +27,8 @@ public class LoginController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // Populate the ComboBox with user types
-        userTypeComboBox.setItems(FXCollections.observableArrayList(
-            "Managing Director",
-            "Domestic Customer"
-        ));
+
+        userTypeComboBox.setItems(FXCollections.observableArrayList("Managing Director", "Domestic Customer"));
     }
     
     @FXML
@@ -45,7 +42,7 @@ public class LoginController implements Initializable {
             return;
         }
         
-        // Simple authentication (for demo purposes)
+
         if (isValidCredentials(username, password, userType)) {
             try {
                 navigateToDashboard(userType);

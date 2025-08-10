@@ -1,99 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
 
-<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.first_project.CustomerDashboardController">
-   <children>
-      <HBox alignment="CENTER_RIGHT" spacing="10.0">
-         <children>
-            <Label text="Domestic Customer Dashboard" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
-            <Region HBox.hgrow="ALWAYS" />
-            <Button fx:id="logoutButton" text="Logout" onAction="#handleLogout" />
-         </children>
-         <padding>
-            <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
-         </padding>
-      </HBox>
-      <GridPane hgap="20.0" vgap="20.0">
-         <children>
-            <VBox alignment="CENTER" spacing="10.0" maxWidth="250" minWidth="250">
-               <children>
-                  <Label text="Goal 1: Apply for New Gas Connection" style="-fx-font-weight: bold;" />
-                  <Button text="Access" onAction="#openGoal1" />
-               </children>
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding>
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.first_project.controllers.CustomerDashboardController">
+
+    <!-- Top Section: Header -->
+    <top>
+        <HBox spacing="10" style="-fx-padding: 10; -fx-background-color: #f0f0f0;">
+            <Label fx:id="welcomeLabel" style="-fx-font-size: 18px;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Logout" onAction="#handleLogout"/>
+        </HBox>
+    </top>
+
+    <!-- Left Section: Quick Actions -->
+    <left>
+        <VBox spacing="10" style="-fx-padding: 10; -fx-background-color: #f8f8f8;">
+            <Button text="Pay Bill" maxWidth="Infinity" onAction="#handlePayBill"/>
+            <Button text="Submit Complaint" maxWidth="Infinity" onAction="#handleSubmitComplaint"/>
+            <Button text="Book Technician" maxWidth="Infinity" onAction="#handleBookTechnician"/>
+            <Button text="View Consumption" maxWidth="Infinity" onAction="#handleViewConsumption"/>
+            <Button text="Update Profile" maxWidth="Infinity" onAction="#handleUpdateProfile"/>
+            <Button text="View Documents" maxWidth="Infinity" onAction="#handleViewDocuments"/>
+        </VBox>
+    </left>
+
+    <!-- Center Section: Main Content -->
+    <center>
+        <ScrollPane fitToWidth="true">
+            <VBox spacing="20" style="-fx-padding: 20;">
+                <!-- Customer Information -->
+                <TitledPane text="Account Information" expanded="true">
+                    <GridPane hgap="10" vgap="10">
+                        <Label fx:id="customerIdLabel" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                        <Label fx:id="connectionStatusLabel" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                        <Label fx:id="meterNumberLabel" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                        <Label fx:id="currentReadingLabel" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        <Label fx:id="billAmountLabel" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                    </GridPane>
+                </TitledPane>
+
+                <!-- Bill History -->
+                <TitledPane text="Bill History" expanded="true">
+                    <VBox spacing="10">
+                        <ListView fx:id="billsList" prefHeight="200"/>
+                    </VBox>
+                </TitledPane>
+
+                <!-- Complaints History -->
+                <TitledPane text="Complaint History" expanded="true">
+                    <VBox spacing="10">
+                        <ListView fx:id="complaintsList" prefHeight="200"/>
+                    </VBox>
+                </TitledPane>
             </VBox>
-            <VBox alignment="CENTER" spacing="10.0" maxWidth="250" minWidth="250" GridPane.columnIndex="1">
-               <children>
-                  <Label text="Goal 2: Pay Monthly Gas Bill" style="-fx-font-weight: bold;" />
-                  <Button text="Access" onAction="#openGoal2" />
-               </children>
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding>
-            </VBox>
-            <VBox alignment="CENTER" spacing="10.0" maxWidth="250" minWidth="250" GridPane.columnIndex="2">
-               <children>
-                  <Label text="Goal 3: Submit Service Complaint" style="-fx-font-weight: bold;" />
-                  <Button text="Access" onAction="#openGoal3" />
-               </children>
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding>
-            </VBox>
-            <VBox alignment="CENTER" spacing="10.0" maxWidth="250" minWidth="250" GridPane.columnIndex="3">
-               <children>
-                  <Label text="Goal 4: Request Meter Reading" style="-fx-font-weight: bold;" />
-                  <Button text="Access" onAction="#openGoal4" />
-               </children>
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding>
-            </VBox>
-            <VBox alignment="CENTER" spacing="10.0" maxWidth="250" minWidth="250" GridPane.rowIndex="1">
-               <children>
-                  <Label text="Goal 5: Schedule Maintenance Visit" style="-fx-font-weight: bold;" />
-                  <Button text="Access" onAction="#openGoal5" />
-               </children>
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding>
-            </VBox>
-            <VBox alignment="CENTER" spacing="10.0" maxWidth="250" minWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <children>
-                  <Label text="Goal 6: View Billing History" style="-fx-font-weight: bold;" />
-                  <Button text="Access" onAction="#openGoal6" />
-               </children>
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding>
-            </VBox>
-            <VBox alignment="CENTER" spacing="10.0" maxWidth="250" minWidth="250" GridPane.columnIndex="2" GridPane.rowIndex="1">
-               <children>
-                  <Label text="Goal 7: Update Personal Information" style="-fx-font-weight: bold;" />
-                  <Button text="Access" onAction="#openGoal7" />
-               </children>
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding>
-            </VBox>
-            <VBox alignment="CENTER" spacing="10.0" maxWidth="250" minWidth="250" GridPane.columnIndex="3" GridPane.rowIndex="1">
-               <children>
-                  <Label text="Goal 8: Emergency Contact" style="-fx-font-weight: bold;" />
-                  <Button text="Access" onAction="#openGoal8" />
-               </children>
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding>
-            </VBox>
-         </children>
-         <padding>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-         </padding>
-      </GridPane>
-   </children>
-</VBox>
+        </ScrollPane>
+    </center>
+
+    <!-- Status Bar -->
+    <bottom>
+        <HBox style="-fx-padding: 5; -fx-background-color: #f0f0f0;">
+            <Label text="Last Updated: "/>
+            <Label fx:id="lastUpdateLabel"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <ProgressIndicator fx:id="loadingIndicator" visible="false"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

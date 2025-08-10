@@ -1,205 +1,134 @@
 # Titas Gas Management System
 
-A comprehensive JavaFX application for managing gas company operations with separate dashboards for Managing Directors and Domestic Customers.
-
-## Project Overview
-
-This JavaFX application implements a gas company management system with two main user types:
-
-### Managing Director Dashboard
-- **Goal 1**: Monitor Operational Dashboard
-- **Goal 2**: Approve Budget for Network
-- **Goal 3**: Review Monthly Performance Report
-- **Goal 4**: Overseas Emergency Incident
-- **Goal 5**: Authorize High-Value Procurement
-- **Goal 6**: Review Stakeholder Feedback
-- **Goal 7**: Assign Strategic Objectives
-- **Goal 8**: Approve Organizational Policy
-
-### Domestic Customer Dashboard
-- **Goal 1**: Apply for New Gas Connection
-- **Goal 2**: Pay Monthly Gas Bill
-- **Goal 3**: Submit a Service Complaint
-- **Goal 4**: Track Connection Status
-- **Goal 5**: Update Customer Profile
-- **Goal 6**: Book a Technician Visit
-- **Goal 7**: Request Billing Clarification
-- **Goal 8**: Download Connection Certificate
+A comprehensive JavaFX-based gas utility management system for Titas Gas with multiple user roles and detailed workflows. This system provides efficient management of gas distribution, customer service, billing, and system monitoring.
 
 ## Features
 
-### Login System
-- User authentication with role-based access
-- Separate dashboards for different user types
-- Secure login with username/password validation
+### Managing Director Dashboard
+- Operational monitoring and analytics
+- Budget approval system
+- Performance reporting
+- Emergency incident management
+- Policy management
+- System monitoring
 
-### Interactive Dashboards
-- Modern, responsive UI design
-- Grid-based layout for easy navigation
-- Color-coded goal categories
-- Real-time data visualization
+### Domestic Customer Portal
+- Bill payment system
+- Service complaint management
+- Technician booking
+- Usage monitoring
+- Profile management
+- Document management
 
-### Goal-Specific Functionality
-- **Operational Dashboard**: Real-time monitoring with filters
-- **Budget Approval**: Table-based proposal management
-- **Gas Connection Application**: Form-based application with file upload
-- **Bill Payment**: Payment processing with multiple payment methods
-- **Complaint Management**: Service request submission
-- **Document Management**: File upload and download capabilities
+## Technical Stack
 
-## Technical Architecture
+- Java 21
+- JavaFX 21
+- Maven
+- JUnit 5
+- SLF4J & Logback
+- Google Guava
+- Apache Commons Lang
 
-### Project Structure
+## Project Structure
+
 ```
-src/
-├── main/
-│   ├── java/
-│   │   └── org/example/first_project/
-│   │       ├── HelloApplication.java          # Main application entry point
-│   │       ├── LoginController.java           # Login functionality
-│   │       ├── DirectorDashboardController.java    # Director dashboard
-│   │       ├── CustomerDashboardController.java    # Customer dashboard
-│   │       ├── DirectorGoal1Controller.java   # Goal-specific controllers
-│   │       ├── DirectorGoal2Controller.java
-│   │       ├── CustomerGoal1Controller.java
-│   │       ├── CustomerGoal2Controller.java
-│   │       └── ... (additional goal controllers)
-│   └── resources/
-│       └── org/example/first_project/
-│           ├── login-view.fxml               # Login screen
-│           ├── director-dashboard.fxml       # Director dashboard
-│           ├── customer-dashboard.fxml       # Customer dashboard
-│           ├── director-goal1.fxml          # Goal-specific FXML files
-│           ├── director-goal2.fxml
-│           ├── customer-goal1.fxml
-│           ├── customer-goal2.fxml
-│           └── ... (additional goal FXML files)
+src/main/java/
+├── org.example.first_project/
+│   ├── models/           # Domain models
+│   ├── services/         # Service interfaces
+│   ├── controllers/      # JavaFX controllers
+│   └── TitasGasApp.java  # Main application
 ```
 
-### Technologies Used
-- **JavaFX 21**: Modern UI framework
-- **Maven**: Build and dependency management
-- **FXML**: Declarative UI design
-- **CSS Styling**: Custom styling for modern appearance
-
-## Installation and Setup
+## Getting Started
 
 ### Prerequisites
-- Java 21 or higher
-- Maven 3.6 or higher
-- JavaFX SDK (included in project dependencies)
+- Java Development Kit (JDK) 21 or later
+- Maven 3.6 or later
+- Git
 
-### Running the Application
+### Installation
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd firstproject
-   ```
+1. Clone the repository:
+```bash
+git clone https://github.com/TabassumKader/firstproject.git
+cd firstproject
+```
 
-2. **Build the project**
-   ```bash
-   mvn clean compile
-   ```
+2. Build the project:
+```bash
+mvn clean install
+```
 
-3. **Run the application**
-   ```bash
-   mvn javafx:run
-   ```
+3. Run the application:
+```bash
+mvn javafx:run
+```
 
-### Login Credentials
+## Development Setup
 
-#### Managing Director
-- **Username**: director
-- **Password**: password
+1. Install required software:
+   - JDK 17 or later
+   - Maven
+   - Your preferred IDE (VS Code, IntelliJ IDEA, etc.)
 
-#### Domestic Customer
-- **Username**: customer
-- **Password**: password
+2. Import the project:
+   - For VS Code: Install Java and JavaFX extensions
+   - For IntelliJ IDEA: Open as Maven project
 
-## Usage Guide
+3. Configure JDK:
+   - Ensure project SDK is set to JDK 21
+   - Configure Maven to use JDK 21
 
-### For Managing Directors
+## Usage
 
-1. **Login** with director credentials
-2. **Navigate** to the desired goal from the dashboard
-3. **Monitor** operational metrics and KPIs
-4. **Approve** budgets and proposals
-5. **Review** reports and performance data
+1. Launch the application
+2. Login with appropriate credentials:
+   - Managing Director access
+   - Customer access
 
-### For Domestic Customers
+### Managing Director Operations
+- View operational dashboard
+- Manage budgets and policies
+- Handle emergencies
+- Monitor system performance
+- Generate reports
 
-1. **Login** with customer credentials
-2. **Access** customer services from the dashboard
-3. **Apply** for new gas connections
-4. **Pay** monthly bills online
-5. **Submit** service complaints
-6. **Track** application status
+### Customer Operations
+- View and pay bills
+- Submit complaints
+- Book technician visits
+- Monitor gas consumption
+- Manage documents
 
-## Key Features Implemented
+## Testing
 
-### 1. Operational Dashboard (Director Goal 1)
-- Real-time data visualization
-- Filter by division, timeframe, and department
-- Interactive metrics display
-- Performance monitoring
-
-### 2. Budget Approval (Director Goal 2)
-- Table-based proposal management
-- Approval workflow
-- Digital signature support
-- Remarks and comments system
-
-### 3. Gas Connection Application (Customer Goal 1)
-- Comprehensive application form
-- Document upload functionality
-- Form validation
-- Application ID generation
-
-### 4. Bill Payment (Customer Goal 2)
-- Multiple payment methods
-- Payment history tracking
-- Transaction processing
-- Receipt generation
-
-## Development Status
-
-### Completed Features
-- ✅ Login system with role-based access
-- ✅ Dashboard navigation
-- ✅ Goal 1 & 2 for both user types (fully implemented)
-- ✅ Basic structure for all remaining goals
-- ✅ Modern UI design with responsive layout
-
-### In Development
-- 🔄 Goal 3-8 detailed implementations
-- 🔄 Advanced data visualization
-- 🔄 Database integration
-- 🔄 Real-time notifications
-
-### Planned Features
-- 📋 Advanced reporting and analytics
-- 📋 Mobile-responsive design
-- 📋 Multi-language support
-- 📋 Integration with external payment gateways
-- 📋 Advanced security features
+Run the test suite:
+```bash
+mvn test
+```
 
 ## Contributing
 
 1. Fork the repository
 2. Create a feature branch
-3. Implement your changes
-4. Add appropriate tests
-5. Submit a pull request
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+## Project Status
+
+Under active development. Current version: 1.0-SNAPSHOT
+
+## Future Enhancements
+
+- Integration with payment gateways
+- Mobile application development
+- Real-time monitoring system
+- Advanced analytics dashboard
+- SMS notification system
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Support
-
-For support and questions, please contact the development team or create an issue in the repository.
-
----
-
-**Note**: This is an undergraduate-level OOP project demonstrating JavaFX application development with modern UI/UX principles and object-oriented programming concepts.
+This project is proprietary software for Titas Gas Transmission and Distribution Company Limited.
